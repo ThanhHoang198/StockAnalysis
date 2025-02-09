@@ -3,3 +3,5 @@ StockAnalysis.Domain/bin/
 StockAnalysis.Domain/obj/
 StockAnalysis.UI/bin/
 StockAnalysis.UI/obj/
+StockAnalysis.ModelingAPI/obj/
+StockAnalysis.ModelingAPI/bin/

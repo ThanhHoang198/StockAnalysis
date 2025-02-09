@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockAnalysis.Domain", "Sto
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockAnalysis.UI", "StockAnalysis.UI\StockAnalysis.UI.csproj", "{E6FF4419-0333-47C7-94D8-9DAAD55AA7B0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockAnalysis.ModelingAPI", "StockAnalysis.ModelingAPI\StockAnalysis.ModelingAPI.csproj", "{3ECBFAB8-4371-4DF0-972D-88F0788008FE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{E6FF4419-0333-47C7-94D8-9DAAD55AA7B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E6FF4419-0333-47C7-94D8-9DAAD55AA7B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E6FF4419-0333-47C7-94D8-9DAAD55AA7B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3ECBFAB8-4371-4DF0-972D-88F0788008FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3ECBFAB8-4371-4DF0-972D-88F0788008FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3ECBFAB8-4371-4DF0-972D-88F0788008FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3ECBFAB8-4371-4DF0-972D-88F0788008FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

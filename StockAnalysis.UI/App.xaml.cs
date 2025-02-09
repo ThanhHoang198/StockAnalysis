@@ -1,4 +1,6 @@
-﻿using StockAnalysis.UI.ViewModels;
+﻿using StockAnalysis.Domain.Services;
+using StockAnalysis.ModelingAPI.Services;
+using StockAnalysis.UI.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -16,8 +18,12 @@ namespace StockAnalysis.UI
     {
         protected override void OnStartup(StartupEventArgs e)
         {
+            //new StockExchangeService().GetListedCompanies(StockExchangeType.HOSE).ContinueWith((task) =>
+            //{
+            //    var result = task.Result; 
+            //});
             Window window=new MainWindow();
-            window.DataContext = new MainViewModel();
+            window.DataContext = new MainViewModel(CompanyViewModel.LoadListedCompanyViewModel(new StockExchangeService()));
             window.Show();
             base.OnStartup(e);
         }

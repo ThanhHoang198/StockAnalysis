@@ -8,9 +8,10 @@ namespace StockAnalysis.UI.ViewModels
     public class MainViewModel:ViewModelBase
     {
         public INavigator Navigator { get; set; } = new Navigator();
-        public MainViewModel()
+        public CompanyViewModel CompanyViewModel { get; set; }
+        public MainViewModel(CompanyViewModel companyViewModel)
         {
-            
+            CompanyViewModel = companyViewModel;
         }
     }
 }
