@@ -1,6 +1,7 @@
 ﻿using StockAnalysis.UI.Commands;
 using StockAnalysis.UI.Models;
 using StockAnalysis.UI.ViewModels;
+using StockAnalysis.UI.ViewModels.Factories;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +13,10 @@ namespace StockAnalysis.UI.State.Navigators
     public class Navigator : ObservableObject, INavigator
     {
         private ViewModelBase currentViewModel;
-
+        public Navigator(IViewModelAbstractFactory viewModelAbstractFactory)
+        {
+            UpdateCurrentViewModelCommand = new UpdateCurrentViewModelCommand(this,viewModelAbstractFactory);
+        }
         public ViewModelBase CurrentViewModel
         {
             get => currentViewModel;
@@ -22,7 +26,7 @@ namespace StockAnalysis.UI.State.Navigators
                 OnPropertyChanged(nameof(CurrentViewModel));
             }
         }
-        public ICommand UpdateCurrentViewModelCommand => new UpdateCurrentViewModelCommand(this);
+        public ICommand UpdateCurrentViewModelCommand { get; set; }
 
     }
 }

@@ -7,11 +7,12 @@ namespace StockAnalysis.UI.ViewModels
 {
     public class MainViewModel:ViewModelBase
     {
-        public INavigator Navigator { get; set; } = new Navigator();
+        public INavigator Navigator { get; set; }
         public CompanyViewModel CompanyViewModel { get; set; }
-        public MainViewModel(CompanyViewModel companyViewModel)
+        public MainViewModel(INavigator navigator)
         {
-            CompanyViewModel = companyViewModel;
+            Navigator = navigator;
+            Navigator.UpdateCurrentViewModelCommand.Execute(ViewType.Stock);
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using StockAnalysis.UI.State.Navigators;
 using StockAnalysis.UI.ViewModels;
+using StockAnalysis.UI.ViewModels.Factories;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,12 +11,14 @@ namespace StockAnalysis.UI.Commands
     public class UpdateCurrentViewModelCommand : ICommand
     {
         private readonly INavigator navigator;
+        private readonly IViewModelAbstractFactory viewModelAbstractFactory;
 
         public event EventHandler CanExecuteChanged;
 
-        public UpdateCurrentViewModelCommand(INavigator navigator)
+        public UpdateCurrentViewModelCommand(INavigator navigator, IViewModelAbstractFactory viewModelAbstractFactory)
         {
             this.navigator = navigator;
+            this.viewModelAbstractFactory = viewModelAbstractFactory;
         }
         public bool CanExecute(object parameter)
         {
@@ -26,20 +29,7 @@ namespace StockAnalysis.UI.Commands
         {
             if(parameter is ViewType viewType)
             {
-                switch (viewType)
-                {
-                    case ViewType.Stock:
-                        navigator.CurrentViewModel=new StockInfoViewModel();
-                        break;
-                    case ViewType.Finance:
-                        navigator.CurrentViewModel = new FinanceInfoViewModel();
-                        break;
-                    case ViewType.Comparison:
-                        navigator.CurrentViewModel = new ComparisonViewModel();
-                        break;
-                    default:
-                        break;
-                }
+                navigator.CurrentViewModel=viewModelAbstractFactory.CreateViewModel(viewType);              
             }
         }
     }
