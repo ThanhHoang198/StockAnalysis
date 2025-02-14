@@ -27,7 +27,6 @@ namespace StockAnalysis.ModelingAPI.Services
         private StockInfo ConvertStockInfo(StockInfoDTO stockInfoDTO)
         {
             var stockInfo = new StockInfo();
-            stockInfo.Symbol = stockInfoDTO.mack;
             stockInfo.Price = Double.Parse(stockInfoDTO.close_adjust);
             stockInfo.PriceChange = Double.Parse(stockInfoDTO.changed);
             stockInfo.PriceChangeRatio = Double.Parse(stockInfoDTO.changedRatio);

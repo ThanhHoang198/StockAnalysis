@@ -59,7 +59,9 @@ namespace StockAnalysis.ModelingAPI.Services
                 var newCompany = new Company()
                 {
                     Name = companyDTO.fullname_vi,
-                    BusinessField = companyDTO.loaidn
+                    Symbol = companyDTO.code,
+                    StockExchange= companyDTO.san,
+                    BusinessField =HelperServices.GetBusinessField(companyDTO.loaidn)
                 };
                 companies.Add(newCompany);
             }
@@ -70,7 +72,7 @@ namespace StockAnalysis.ModelingAPI.Services
     {
         public string code { get; set; }
         public string fullname_vi { get; set; }
-        public string loaidn { get; set; }
+        public int loaidn { get; set; }
         public string san { get; set; }
     }
 

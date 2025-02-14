@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using StockAnalysis.Domain.Services;
 using StockAnalysis.ModelingAPI.Services;
+using StockAnalysis.UI.State.Companies;
 using StockAnalysis.UI.State.Navigators;
 using StockAnalysis.UI.ViewModels;
 using StockAnalysis.UI.ViewModels.Factories;
@@ -39,8 +40,10 @@ namespace StockAnalysis.UI
             services.AddSingleton<StockInfoViewModel>();
             services.AddSingleton<FinanceInfoViewModel>();
             services.AddSingleton<ComparisonViewModel>();
+            services.AddSingleton<CompanyViewModel>();
             services.AddSingleton<IViewModelAbstractFactory,ViewModelAbstractFactory>();
             services.AddSingleton<MainViewModel>();
+            services.AddSingleton<CompanyStore>();
             services.AddSingleton<MainWindow>(s=>new MainWindow() { DataContext = s.GetRequiredService<MainViewModel>() });
             return services.BuildServiceProvider();
         }

@@ -9,8 +9,9 @@ namespace StockAnalysis.UI.ViewModels
     {
         public INavigator Navigator { get; set; }
         public CompanyViewModel CompanyViewModel { get; set; }
-        public MainViewModel(INavigator navigator)
+        public MainViewModel(CompanyViewModel companyViewModel, INavigator navigator)
         {
+            CompanyViewModel = companyViewModel;
             Navigator = navigator;
             Navigator.UpdateCurrentViewModelCommand.Execute(ViewType.Stock);
         }

@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StockAnalysis.UI"
         xmlns:controls="clr-namespace:StockAnalysis.UI.Controls"
+        xmlns:views="clr-namespace:StockAnalysis.UI.Views"
         mc:Ignorable="d"
         Title="MainWindow"
         Height="450"
@@ -12,12 +13,22 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
-
         </Grid.RowDefinitions>
-        <controls:NavigationBar Grid.Row="0"
+
+            <TextBlock Grid.Row="0"
+                       Padding="10"
+                       FontSize="28"
+                       Foreground="White"
+                       Background="{StaticResource Primary500}"
+                       Text="STOCK ANALYSIS" />
+        <views:CompanyView Grid.Row="1"
+                           DataContext="{Binding CompanyViewModel}" />
+        <controls:NavigationBar Grid.Row="2"
                                 DataContext="{Binding Navigator}" />
-        <ContentControl Grid.Row="1"
+        <ContentControl Grid.Row="3"
                         Content="{Binding Navigator.CurrentViewModel}" />
     </Grid>
 </Window>

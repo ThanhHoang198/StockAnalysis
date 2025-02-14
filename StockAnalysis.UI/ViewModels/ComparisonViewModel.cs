@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
+
 namespace StockAnalysis.UI.ViewModels
 {
     public class ComparisonViewModel : ViewModelBase
